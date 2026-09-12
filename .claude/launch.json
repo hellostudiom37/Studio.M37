@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "studio-m37-dev",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["/Users/user/Documents/M.37/website claude/scripts/dev-with-node.sh"],
+      "port": 3000
+    }
+  ]
+}
