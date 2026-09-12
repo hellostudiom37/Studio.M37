@@ -20,7 +20,7 @@ const FIT_POINTS = [
 export default function Home() {
   return (
     <>
-      <section className="flex min-h-screen flex-col justify-center gap-10 bg-blue pt-32 pb-20 md:pt-40">
+      <section className="flex min-h-screen flex-col justify-center gap-10 bg-offwhite pt-32 pb-20 md:pt-40">
         <div className="container-page flex flex-col gap-10">
           <Reveal>
             <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-black/60">
@@ -29,8 +29,16 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className="min-h-[2.2em] max-w-4xl text-[11vw] leading-[0.95] text-black md:min-h-[1.1em] md:text-[5.5rem]">
-              <TypingHeadline text="Design that stands out and sells." className="font-display italic" />
+            <h1 className="font-semibold-brand min-h-[2.2em] max-w-4xl text-[11vw] leading-[0.95] text-black md:min-h-[1.1em] md:text-[5.5rem]">
+              <TypingHeadline
+                segments={[
+                  { text: "Design that " },
+                  { text: "stands out", className: "font-display italic" },
+                  { text: " and " },
+                  { text: "sells", className: "font-display italic" },
+                  { text: "." },
+                ]}
+              />
             </h1>
           </Reveal>
 
@@ -60,12 +68,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-black/10 py-24 md:py-32">
+      <section className="border-t border-black/10 bg-blue py-24 md:py-32">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <Reveal>
               <h2 className="font-display max-w-xl text-4xl italic text-black md:text-5xl">
-                How we work &amp; services.
+                How we work.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
@@ -82,7 +90,7 @@ export default function Home() {
             {PHASES.map((p, i) => (
               <Reveal key={p.n} delay={0.08 * i}>
                 <div className="border-t border-black/20 pt-6">
-                  <span className="font-display text-3xl italic text-blue">{p.n}</span>
+                  <span className="font-display text-3xl italic text-black/40">{p.n}</span>
                   <p className="font-semibold-brand mt-3 text-xl text-black">{p.label}</p>
                 </div>
               </Reveal>
@@ -143,7 +151,7 @@ export default function Home() {
               href="/enquiry"
               className="inline-flex items-center rounded-full bg-blue px-8 py-4 font-light-brand text-sm uppercase tracking-[0.1em] text-black transition-colors hover:bg-offwhite"
             >
-              Start the conversation
+              Enquire now
             </Link>
           </Reveal>
         </div>

@@ -210,7 +210,7 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section id="services" className="border-t border-black/10 py-24 md:py-32">
+      <section id="services" className="scroll-mt-24 border-t border-black/10 py-24 md:py-32">
         <div className="container-page">
           <Reveal>
             <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-black/60">
