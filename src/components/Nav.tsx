@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -17,9 +17,14 @@ export default function Nav({ logo }: { logo: ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  // Close the mobile menu on route change — done during render (not an
+  // effect) per React's recommended pattern for resetting state when a
+  // prop changes, so it doesn't trigger an extra cascading render.
+  const [openedForPathname, setOpenedForPathname] = useState(pathname);
+  if (pathname !== openedForPathname) {
+    setOpenedForPathname(pathname);
+    if (open) setOpen(false);
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-offwhite/80 backdrop-blur-md">
