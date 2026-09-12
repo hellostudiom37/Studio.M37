@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="text-offwhite">
             <Logo className="h-7" />
             <p className="font-display mt-4 max-w-xs text-2xl italic text-blue">
-              Brands built with intent.
+              Design with a job to do.
             </p>
           </div>
 

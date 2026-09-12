@@ -47,6 +47,7 @@ yarn-error.log*
 /public/projects/
 /src/data/projects.generated.json
 /src/data/assets-status.generated.json
+/src/data/asset-hashes.generated.json
 
 # typescript
 *.tsbuildinfo

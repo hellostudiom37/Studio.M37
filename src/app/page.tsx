@@ -1,25 +1,8 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
+import TypingHeadline from "@/components/TypingHeadline";
 import projects from "@/data/projects.generated.json";
-
-const VALUES = [
-  {
-    title: "Strategy first",
-    body: "Every mark, palette and layout starts with why the business exists — not what looks nice on a moodboard.",
-    tone: "blue",
-  },
-  {
-    title: "Designed with intent",
-    body: "No decoration without reason. If it doesn't earn its place, it doesn't make the cut.",
-    tone: "black",
-  },
-  {
-    title: "Built to launch",
-    body: "A brand isn't finished at the final file export. We hand over systems that hold up in the real world.",
-    tone: "blue",
-  },
-] as const;
 
 const PHASES = [
   { n: "01", label: "Discovery" },
@@ -28,69 +11,52 @@ const PHASES = [
   { n: "04", label: "Launch" },
 ];
 
+const FIT_POINTS = [
+  "You want a brand that says something, not just one that looks nice.",
+  "You're building for the long run, not a quick logo swap.",
+  "You'd rather get it right than get it cheap.",
+];
+
 export default function Home() {
   return (
     <>
-      <section className="container-page flex min-h-screen flex-col justify-center gap-10 pt-32 pb-20 md:pt-40">
-        <Reveal>
-          <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-black/60">
-            Brand &amp; Creative Studio
-          </span>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <h1 className="max-w-4xl text-[13vw] leading-[0.95] text-black md:text-[6.5rem]">
-            <span className="font-semibold-brand">Brands built </span>
-            <span className="font-display italic text-blue">with intent.</span>
-          </h1>
-        </Reveal>
-
-        <Reveal delay={0.2} className="max-w-xl">
-          <p className="font-light-brand text-lg text-black/70 md:text-xl">
-            Studio M.37 is a minimalist creative studio for founders who want their brand to look
-            beautiful and think clearly — identity, design and launch support, built on strategy
-            rather than trends.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.3} className="flex flex-wrap gap-4">
-          <Link
-            href="/enquiry"
-            className="inline-flex items-center rounded-full bg-black px-7 py-3.5 font-light-brand text-sm uppercase tracking-[0.1em] text-offwhite transition-colors hover:bg-blue hover:text-black"
-          >
-            Start a project
-          </Link>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center rounded-full border border-black/20 px-7 py-3.5 font-light-brand text-sm uppercase tracking-[0.1em] text-black transition-colors hover:border-black hover:bg-black hover:text-offwhite"
-          >
-            View the work
-          </Link>
-        </Reveal>
-      </section>
-
-      <section className="border-t border-black/10 bg-black py-24 text-offwhite md:py-32">
-        <div className="container-page">
+      <section className="flex min-h-screen flex-col justify-center gap-10 bg-blue pt-32 pb-20 md:pt-40">
+        <div className="container-page flex flex-col gap-10">
           <Reveal>
-            <h2 className="font-display max-w-2xl text-4xl italic text-blue md:text-5xl">
-              What we stand for.
-            </h2>
+            <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-black/60">
+              Graphic &amp; Brand Design Studio
+            </span>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {VALUES.map((v, i) => (
-              <Reveal key={v.title} delay={0.1 * i}>
-                <div
-                  className={`flex h-full flex-col justify-between gap-8 rounded-2xl p-8 ${
-                    v.tone === "blue" ? "bg-blue text-black" : "bg-offwhite/5 text-offwhite"
-                  }`}
-                >
-                  <span className="font-semibold-brand text-2xl">{v.title}</span>
-                  <p className="font-light-brand text-sm leading-relaxed opacity-80">{v.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.1}>
+            <h1 className="min-h-[2.2em] max-w-4xl text-[11vw] leading-[0.95] text-black md:min-h-[1.1em] md:text-[5.5rem]">
+              <TypingHeadline text="Design that stands out and sells." className="font-display italic" />
+            </h1>
+          </Reveal>
+
+          <Reveal delay={0.2} className="max-w-xl">
+            <p className="font-light-brand text-lg text-black/70 md:text-xl">
+              We design brands that do more than look nice — ones that solve a real problem,
+              stand out from the competition, and actually help sell what you&apos;re offering.
+              Every piece works together, so your brand says the same thing wherever people
+              find it.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.3} className="flex flex-wrap gap-4">
+            <Link
+              href="/enquiry"
+              className="inline-flex items-center rounded-full bg-black px-7 py-3.5 font-light-brand text-sm uppercase tracking-[0.1em] text-offwhite transition-colors hover:bg-white hover:text-black"
+            >
+              Start a project
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center rounded-full border border-black/20 px-7 py-3.5 font-light-brand text-sm uppercase tracking-[0.1em] text-black transition-colors hover:border-black hover:bg-black hover:text-offwhite"
+            >
+              View the work
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -99,15 +65,15 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <Reveal>
               <h2 className="font-display max-w-xl text-4xl italic text-black md:text-5xl">
-                How we work.
+                How we work &amp; services.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link
-                href="/studio"
+                href="/studio#services"
                 className="font-light-brand text-sm uppercase tracking-[0.15em] text-black underline underline-offset-4"
               >
-                More on our approach
+                More on our approach &amp; services
               </Link>
             </Reveal>
           </div>
@@ -153,19 +119,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-black/10 bg-blue py-24 md:py-32">
-        <div className="container-page flex flex-col items-start gap-8">
+      <section className="border-t border-black/10 bg-black py-24 text-offwhite md:py-32">
+        <div className="container-page flex flex-col items-start gap-10">
           <Reveal>
-            <h2 className="font-semibold-brand max-w-2xl text-4xl text-black md:text-6xl">
-              Have a project in mind?
+            <h2 className="font-display max-w-2xl text-4xl italic text-blue md:text-5xl">
+              You&apos;ll probably enjoy working with us if&hellip;
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+
+          <ul className="flex flex-col gap-4">
+            {FIT_POINTS.map((point, i) => (
+              <Reveal key={point} delay={0.08 * i}>
+                <li className="font-light-brand flex gap-3 text-lg text-offwhite/80 md:text-xl">
+                  <span className="text-blue">—</span>
+                  {point}
+                </li>
+              </Reveal>
+            ))}
+          </ul>
+
+          <Reveal delay={0.3}>
             <Link
               href="/enquiry"
-              className="inline-flex items-center rounded-full bg-black px-8 py-4 font-light-brand text-sm uppercase tracking-[0.1em] text-offwhite transition-colors hover:bg-offwhite hover:text-black"
+              className="inline-flex items-center rounded-full bg-blue px-8 py-4 font-light-brand text-sm uppercase tracking-[0.1em] text-black transition-colors hover:bg-offwhite"
             >
-              Tell us about it
+              Start the conversation
             </Link>
           </Reveal>
         </div>

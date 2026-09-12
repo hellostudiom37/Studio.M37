@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import FounderPhoto from "@/components/FounderPhoto";
+import ServiceCard, { type Service } from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
   title: "Studio — Studio M.37",
@@ -30,11 +31,111 @@ const PHASES = [
   },
 ];
 
-const SERVICES = [
-  { name: "Logo Design", price: "500 EUR", timeline: "7–15 days" },
-  { name: "Mini Brand", price: "700 EUR", timeline: "15 days" },
-  { name: "Brand Identity", price: "900 EUR", timeline: "15–20 days" },
-  { name: "Brand Identity Maximum", price: "1400 EUR", timeline: "25–30 days" },
+const SERVICES: Service[] = [
+  {
+    name: "Logo Design",
+    audience:
+      "Just starting out and need one strong, versatile mark to launch with? This is the low-lift way in.",
+    timeline: "7–15 days",
+    price: "500 EUR",
+    included: [
+      "Niche, audience & competitor analysis",
+      "Creative direction, moodboard",
+      "2 logo concepts to choose from",
+      "Primary logo",
+      "Secondary logo",
+      "Brand mark",
+      "Brand colour palette + typography suite",
+      "2 rounds of revisions",
+    ],
+    deliverables: ["Logo book (usage guidelines)", "Logo visualisation / mockups"],
+    files: [
+      "Print (AI, EPS, PDF)",
+      "Web (PNG, JPEG, SVG)",
+      "Brand colours + black & white variations",
+      "Presentation with logo visualisation",
+    ],
+  },
+  {
+    name: "Mini Brand",
+    audience:
+      "Ready to look consistent across a few more touchpoints, without committing to a full system yet.",
+    timeline: "15 days",
+    price: "700 EUR",
+    included: [
+      "Niche, audience & competitor analysis",
+      "Creative direction, moodboard",
+      "2 logo concepts to choose from",
+      "Primary logo",
+      "Secondary logo",
+      "3 brand marks",
+      "1 brand pattern",
+      "Brand colour palette + typography suite",
+      "2 rounds of revisions",
+    ],
+    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
+    files: [
+      "Print (AI, EPS, PDF)",
+      "Web (PNG, JPEG, SVG)",
+      "Brand colours + black & white variations",
+      "Presentation with logo visualisation",
+    ],
+  },
+  {
+    name: "Brand Identity",
+    audience:
+      "Growing, and need a fuller toolkit — social, print, the works — to match where the business is headed.",
+    timeline: "15–20 days",
+    price: "900 EUR",
+    included: [
+      "Niche, audience & competitor analysis",
+      "Creative direction, moodboard",
+      "2 logo concepts to choose from",
+      "Primary logo + 2 secondary logos",
+      "3 brand marks",
+      "Brand colour palette + typography suite",
+      "Brand visual elements (icon suite)",
+      "1 brand pattern",
+      "2 print material layouts (business card, label, etc.)",
+      "Social media avatar + 5 highlight covers",
+      "2 rounds of revisions",
+    ],
+    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
+    files: [
+      "Print (AI, EPS, PDF)",
+      "Web (PNG, JPEG, SVG)",
+      "Brand colours + black & white variations",
+      "Brand identity presentation",
+    ],
+  },
+  {
+    name: "Brand Identity Maximum",
+    audience:
+      "Established, and investing in one complete, built-to-scale brand system for the long haul.",
+    timeline: "25–30 days",
+    price: "1400 EUR",
+    included: [
+      "Niche, audience & competitor analysis",
+      "Creative direction, moodboard",
+      "2 logo concepts to choose from",
+      "Primary logo + 2 secondary logos",
+      "5 brand marks",
+      "Brand colour palette + typography suite",
+      "Brand visual elements (icon suite)",
+      "2 brand patterns",
+      "5 print material layouts (business card, label, etc.)",
+      "Social media templates (delivered in Figma)",
+      "Social media avatar + 5 highlight covers",
+      "3 rounds of revisions",
+    ],
+    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
+    files: [
+      "Print (AI, EPS, PDF)",
+      "Web (PNG, JPEG, SVG)",
+      "Brand colours + black & white variations",
+      "Brand identity presentation",
+    ],
+  },
 ];
 
 export default function StudioPage() {
@@ -60,20 +161,19 @@ export default function StudioPage() {
 
           <Reveal delay={0.15} className="space-y-4">
             <p className="font-light-brand text-black/70">
-              Studio M.37 is a minimalist creative studio building brand identities for founders
-              who need more than a nice-looking logo. We work at the intersection of strategy and
-              design — figuring out what a business actually stands for, then translating that
-              into something visual, consistent, and built to last past launch day.
+              Studio M.37 is a graphic and brand design studio for founders who need more than a
+              nice-looking logo. We design brands that solve a real problem, set you apart from
+              the competition, and help sell what you&apos;re actually offering.
             </p>
             <p className="font-light-brand text-black/70">
-              We create brands to look beautiful, but backed with strategy — every palette,
-              typeface and mark exists because it earns its place, not because it was trending.
+              That means every palette, typeface and mark has a job to do — working together so
+              your brand says the same thing clearly, wherever people come across it.
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <blockquote className="font-display border-l-2 border-blue pl-6 text-2xl italic text-black">
-              &ldquo;Good design explains itself.&rdquo;
+              &ldquo;Clear enough to understand, sharp enough to sell.&rdquo;
             </blockquote>
           </Reveal>
         </div>
@@ -110,7 +210,7 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section className="border-t border-black/10 py-24 md:py-32">
+      <section id="services" className="border-t border-black/10 py-24 md:py-32">
         <div className="container-page">
           <Reveal>
             <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-black/60">
@@ -126,13 +226,7 @@ export default function StudioPage() {
           <div className="mt-16 divide-y divide-black/10 border-t border-b border-black/10">
             {SERVICES.map((service, i) => (
               <Reveal key={service.name} delay={0.05 * i}>
-                <div className="flex flex-col justify-between gap-2 py-6 sm:flex-row sm:items-center">
-                  <span className="font-semibold-brand text-xl text-black">{service.name}</span>
-                  <div className="flex gap-8 font-light-brand text-sm uppercase tracking-[0.1em] text-black/60">
-                    <span>{service.timeline}</span>
-                    <span className="text-black">{service.price}</span>
-                  </div>
-                </div>
+                <ServiceCard service={service} />
               </Reveal>
             ))}
           </div>

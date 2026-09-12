@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {
   title: "Enquiry — Studio M.37",
   description: "Tell Studio M.37 about your project.",
 };
-
-const FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeCZDCDTNAu2JShGlDjgtk_3Ql5jf5V5mpY5vvWGe5CFtJ1JA/viewform?embedded=true";
 
 export default function EnquiryPage() {
   return (
@@ -34,15 +32,8 @@ export default function EnquiryPage() {
       </div>
 
       <Reveal delay={0.2} className="container-page mt-14">
-        <div className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_20px_60px_-30px_rgba(16,16,16,0.3)]">
-          <iframe
-            src={FORM_EMBED_URL}
-            title="Studio M.37 enquiry form"
-            className="block h-[2200px] w-full"
-            loading="lazy"
-          >
-            Loading…
-          </iframe>
+        <div className="rounded-3xl border border-black/10 bg-white p-8 shadow-[0_20px_60px_-30px_rgba(16,16,16,0.3)] md:p-12">
+          <EnquiryForm />
         </div>
       </Reveal>
     </section>

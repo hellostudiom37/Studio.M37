@@ -1,6 +1,6 @@
 # Studio M.37
 
-Minimalist brand & creative studio website. Next.js (App Router) + Tailwind CSS v4 + Framer Motion.
+Graphic & brand design studio website. Next.js (App Router) + Tailwind CSS v4 + Framer Motion.
 
 ## Getting started
 
@@ -54,10 +54,18 @@ Both are picked up next time `npm run sync` runs.
 
 ## Enquiry page
 
-`/enquiry` embeds the real Google Form as an iframe so submissions land exactly where they
-already do. Edit the form itself in Google Forms — the embedded page updates automatically, no
-code changes needed. If you add/remove questions and the form gets a lot longer or shorter,
-adjust the iframe's fixed height in `src/app/enquiry/page.tsx`.
+`/enquiry` is a fully custom-styled form (see `src/components/EnquiryForm.tsx`) that submits
+straight to your existing Google Form's backend — so responses still land in the same Google
+Sheet / response tab as before, no separate inbox to check.
+
+**One-time setup in Google Forms:** open the form → Responses tab → the three-dot menu → "Get
+email notifications for new responses". That's what makes responses land in your Gmail; it's a
+setting on the form itself, not something the website controls.
+
+If you ever add, remove or reorder questions in the Google Form, the `entry.XXXXXXX` field IDs
+hardcoded in `EnquiryForm.tsx` will no longer match — re-extract them by opening the form's
+"Get pre-filled link" option (or viewing the page source) for each field and updating the
+`FIELDS` array.
 
 ## Deployment
 
