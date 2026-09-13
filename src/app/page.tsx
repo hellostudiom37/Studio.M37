@@ -30,15 +30,7 @@ export default function Home() {
 
           <Reveal delay={0.1}>
             <h1 className="font-semibold-brand min-h-[2.2em] max-w-4xl text-[11vw] leading-[0.95] text-black md:min-h-[1.1em] md:text-[5.5rem]">
-              <TypingHeadline
-                segments={[
-                  { text: "Design that " },
-                  { text: "stands out", className: "font-display italic" },
-                  { text: " and " },
-                  { text: "sells", className: "font-display italic" },
-                  { text: "." },
-                ]}
-              />
+              <TypingHeadline segments={[{ text: "Design that stands out and sells." }]} />
             </h1>
           </Reveal>
 

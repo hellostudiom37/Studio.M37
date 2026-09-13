@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const TYPE_SPEED = 95;
-const DELETE_SPEED = 55;
-const PAUSE_FULL = 2400;
-const PAUSE_EMPTY = 700;
+// ~2s to type the full hero line (34 chars), per spec.
+const TYPE_SPEED = 58;
+const DELETE_SPEED = 35;
+const PAUSE_FULL = 2000;
+const PAUSE_EMPTY = 500;
 
 export type TypingSegment = { text: string; className?: string };
 

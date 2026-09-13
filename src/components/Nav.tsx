@@ -64,9 +64,11 @@ export default function Nav({ logo }: { logo: ReactNode }) {
         </Link>
 
         <button
+          type="button"
           onClick={() => setOpen((o) => !o)}
-          className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <motion.span
             animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
@@ -82,11 +84,11 @@ export default function Nav({ logo }: { logo: ReactNode }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.65, 0, 0.35, 1] }}
-            className="overflow-hidden border-t border-black/10 bg-offwhite md:hidden"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: [0.65, 0, 0.35, 1] }}
+            className="border-t border-black/10 bg-offwhite md:hidden"
           >
             <ul className="container-page flex flex-col gap-6 py-8">
               {LINKS.map((link, i) => (
