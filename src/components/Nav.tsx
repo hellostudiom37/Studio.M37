@@ -16,15 +16,7 @@ const LINKS = [
 export default function Nav({ logo }: { logo: ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
-  // Close the mobile menu on route change — done during render (not an
-  // effect) per React's recommended pattern for resetting state when a
-  // prop changes, so it doesn't trigger an extra cascading render.
-  const [openedForPathname, setOpenedForPathname] = useState(pathname);
-  if (pathname !== openedForPathname) {
-    setOpenedForPathname(pathname);
-    if (open) setOpen(false);
-  }
+  const close = () => setOpen(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-offwhite/80 backdrop-blur-md">
@@ -98,10 +90,7 @@ export default function Nav({ logo }: { logo: ReactNode }) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
                 >
-                  <Link
-                    href={link.href}
-                    className="font-display text-3xl italic text-black"
-                  >
+                  <Link href={link.href} onClick={close} className="font-display text-3xl italic text-black">
                     {link.label}
                   </Link>
                 </motion.li>

@@ -71,16 +71,4 @@
       padding-inline: 3rem;
     }
   }
-
-  .typing-cursor {
-    display: inline-block;
-    margin-left: 0.05em;
-    animation: blink 0.9s step-end infinite;
-  }
-
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
 }
