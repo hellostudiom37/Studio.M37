@@ -30,8 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
-          initial={{ scale: 1.08, opacity: 0 }}
-          animate={hovered ? { scale: 1, opacity: 1 } : { scale: 1.08, opacity: 0 }}
+          animate={{ scale: hovered ? 1.06 : 1 }}
           transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
         />
       )}

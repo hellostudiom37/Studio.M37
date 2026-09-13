@@ -25,8 +25,7 @@ export default function PortfolioPage() {
 
       <Reveal delay={0.15} className="mt-6 max-w-lg">
         <p className="font-light-brand text-black/70">
-          Each project lives on Behance — hover a case to preview it, click through for the full
-          breakdown.
+          Each project lives on Behance — click through for the full breakdown.
         </p>
       </Reveal>
 
