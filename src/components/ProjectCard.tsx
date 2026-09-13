@@ -27,6 +27,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         <motion.img
           src={preview}
           alt=""
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
           initial={{ scale: 1.08, opacity: 0 }}
           animate={hovered ? { scale: 1, opacity: 1 } : { scale: 1.08, opacity: 0 }}

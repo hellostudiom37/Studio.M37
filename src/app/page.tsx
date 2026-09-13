@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
+import TypeOnce from "@/components/TypeOnce";
 import projects from "@/data/projects.generated.json";
 
 const PHASES = [
@@ -28,8 +29,8 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className="font-semibold-brand max-w-4xl text-[11vw] leading-[0.95] text-black md:text-[5.5rem]">
-              Design that stands out and sells.
+            <h1 className="font-semibold-brand min-h-[3.3em] max-w-4xl text-[11vw] leading-[0.95] text-black md:text-[5.5rem]">
+              <TypeOnce text="Design that stands out and sells." durationMs={2000} />
             </h1>
           </Reveal>
 

@@ -1,10 +1,27 @@
 // Reads content/projects/projectN/{projectN_name.txt, projectN_link.txt, projectN_preview_image/*}
 // and produces:
-//   - public/projects/projectN/<image files>  (so Next can serve them)
+//   - public/projects/projectN/<image files>  (resized/compressed, so Next can serve them lean)
 //   - src/data/projects.generated.json        (name/link/slug/images consumed by the Portfolio page)
 // Re-run safe: wipes and rebuilds both outputs from the content/ source each time.
 import fs from "node:fs";
 import path from "node:path";
+import sharp from "sharp";
+
+// Cards render well under 500px wide even on large desktops; 1600px covers
+// retina without shipping full-resolution export files (which run several MB).
+const MAX_WIDTH = 1600;
+
+async function processImage(inputPath, outputPath) {
+  const ext = path.extname(inputPath).toLowerCase();
+  const pipeline = sharp(inputPath).resize({ width: MAX_WIDTH, withoutEnlargement: true });
+  if (ext === ".png") {
+    await pipeline.png({ quality: 82, compressionLevel: 9 }).toFile(outputPath);
+  } else if (ext === ".webp") {
+    await pipeline.webp({ quality: 82 }).toFile(outputPath);
+  } else {
+    await pipeline.jpeg({ quality: 82, mozjpeg: true }).toFile(outputPath);
+  }
+}
 
 const root = path.resolve(import.meta.dirname, "..");
 const contentDir = path.join(root, "content", "projects");
@@ -53,7 +70,7 @@ for (const folder of projectFolders) {
     const destDir = path.join(publicProjectsDir, folder);
     fs.mkdirSync(destDir, { recursive: true });
     for (const file of files) {
-      fs.copyFileSync(path.join(imageFolder, file), path.join(destDir, file));
+      await processImage(path.join(imageFolder, file), path.join(destDir, file));
     }
     images = files.map((f) => `/projects/${folder}/${f}`);
   }
