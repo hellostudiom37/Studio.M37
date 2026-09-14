@@ -18,7 +18,7 @@ const FIELDS: FieldDef[] = [
   { kind: "email", name: "entry.1820806974", label: "Email address", required: true },
   { kind: "text", name: "entry.1482755668", label: "Website URL", required: false },
   { kind: "text", name: "entry.509350352", label: "Instagram handle", required: false },
-  { kind: "text", name: "entry.1099666523", label: "Where are you based (country & city)", required: true },
+  { kind: "text", name: "entry.1099666523", label: "Where are you based (country & city)?", required: true },
   {
     kind: "checkbox",
     name: "entry.546361128",
@@ -56,17 +56,9 @@ const FIELDS: FieldDef[] = [
     rows: 2,
   },
   {
-    kind: "radio",
-    name: "entry.1997163622",
-    label:
-      "Are you happy for us to contact you via email within the next 2–3 working days to discuss your enquiry on a quick discovery call?",
-    required: true,
-    options: ["Yes", "No"],
-  },
-  {
     kind: "checkbox",
     name: "entry.1819721041",
-    label: "How did you hear about us?",
+    label: "How did you hear about Studio M.37?",
     required: true,
     options: ["Google", "Instagram", "TikTok", "Referral"],
     hasOther: true,
