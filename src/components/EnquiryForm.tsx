@@ -25,7 +25,6 @@ const FIELDS: FieldDef[] = [
     label: "Which services are you interested in?",
     required: true,
     options: ["Logo Design", "Mini Brand", "Brand Identity", "Brand Identity Maximum"],
-    hasOther: true,
   },
   {
     kind: "textarea",
