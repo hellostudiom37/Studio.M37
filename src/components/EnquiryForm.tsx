@@ -24,7 +24,7 @@ const FIELDS: FieldDef[] = [
     name: "entry.546361128",
     label: "Which services are you interested in?",
     required: true,
-    options: ["Logo Design", "Mini Brand", "Brand Identity", "Design Extras"],
+    options: ["Logo Design", "Mini Brand", "Brand Identity", "Brand Identity Maximum"],
     hasOther: true,
   },
   {
@@ -52,7 +52,7 @@ const FIELDS: FieldDef[] = [
   {
     kind: "textarea",
     name: "entry.518985280",
-    label: "Do you have a deadline for this project?",
+    label: "What is your timeline and do you have a deadline for this project?",
     required: true,
     rows: 2,
   },
