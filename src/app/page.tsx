@@ -30,16 +30,19 @@ export default function Home() {
 
           <Reveal delay={0.1}>
             <h1 className="font-semibold-brand min-h-[3.3em] max-w-4xl text-[11vw] leading-[0.95] text-black md:text-[5.5rem]">
-              <TypeOnce text="Design that stands out and sells." durationMs={2000} />
+              <TypeOnce text="Good ideas deserve great identities." durationMs={2000} />
             </h1>
           </Reveal>
 
-          <Reveal delay={0.2} className="max-w-xl">
+          <Reveal delay={0.2} className="max-w-xl space-y-4">
             <p className="font-light-brand text-lg text-black/70 md:text-xl">
-              We design brands that do more than look nice — ones that solve a real problem,
-              stand out from the competition, and actually help sell what you&apos;re offering.
-              Every piece works together, so your brand says the same thing wherever people
-              find it.
+              Studio M.37 is an independent creative studio based in Milan, creating distinctive
+              brands that are aesthetically thoughtful, communicate clearly, and give businesses
+              a push forward.
+            </p>
+            <p className="font-light-brand text-lg text-black/70 md:text-xl">
+              Every element has a purpose, bringing together strong visuals and clear thinking to
+              create brands that are memorable, meaningful, and made to work.
             </p>
           </Reveal>
 
@@ -65,7 +68,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <Reveal>
               <h2 className="font-display max-w-xl text-4xl italic text-black md:text-5xl">
-                How we work.
+                From Idea to Identity
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
@@ -73,7 +76,7 @@ export default function Home() {
                 href="/studio#services"
                 className="font-light-brand text-sm uppercase tracking-[0.15em] text-black underline underline-offset-4"
               >
-                More on our approach &amp; services
+                More on the approach &amp; services
               </Link>
             </Reveal>
           </div>
@@ -123,7 +126,7 @@ export default function Home() {
         <div className="container-page flex flex-col items-start gap-10">
           <Reveal>
             <h2 className="font-display max-w-2xl text-4xl italic text-blue md:text-5xl">
-              You&apos;ll probably enjoy working with us if&hellip;
+              You’re in the right place if&hellip;
             </h2>
           </Reveal>
 
