@@ -155,25 +155,34 @@ export default function StudioPage() {
 
           <Reveal delay={0.1}>
             <h1 className="font-display text-4xl italic text-black md:text-5xl">
-              About Studio M.37.
+              Meet the Founder.
             </h1>
           </Reveal>
 
           <Reveal delay={0.15} className="space-y-4">
             <p className="font-light-brand text-black/70">
-              Studio M.37 is a graphic and brand design studio for founders who need more than a
-              nice-looking logo. We design brands that solve a real problem, set you apart from
-              the competition, and help sell what you&apos;re actually offering.
+              My name is Sofia, and I’m the founder and designer behind Studio M.37.
             </p>
             <p className="font-light-brand text-black/70">
-              That means every palette, typeface and mark has a job to do — working together so
-              your brand says the same thing clearly, wherever people come across it.
+              After graduating with a degree in Graphic Design and working with clients across
+              Latvia, Cyprus, and the UAE, I decided to establish my own creative studio.
+            </p>
+            <p className="font-light-brand text-black/70">
+              Studio M.37 is a graphic and brand design studio for founders who need more than a
+              nice-looking logo. I create thoughtful, memorable identities that tell a story, set
+              brands apart, and give them a clear visual voice.
+            </p>
+            <p className="font-light-brand text-black/70">
+              I believe great design starts with deep understanding — the business, the audience,
+              and the problem to solve. Every decision should have a purpose. Design should do
+              more than look good; it should communicate clearly, solve business problems, and
+              help your brand sell.
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <blockquote className="font-display border-l-2 border-blue pl-6 text-2xl italic text-black">
-              &ldquo;Clear enough to understand, sharp enough to sell.&rdquo;
+              &ldquo;Great design has a reason.&rdquo;
             </blockquote>
           </Reveal>
         </div>
