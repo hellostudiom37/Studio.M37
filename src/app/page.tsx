@@ -30,7 +30,7 @@ export default function Home() {
 
           <Reveal delay={0.1}>
             <h1 className="font-semibold-brand min-h-[3.3em] max-w-4xl text-[11vw] leading-[0.95] text-black md:text-[5.5rem]">
-              <TypeOnce text="Good ideas deserve great identities." durationMs={2000} />
+              <TypeOnce text="Good ideas deserve Great identities." durationMs={2000} />
             </h1>
           </Reveal>
 
