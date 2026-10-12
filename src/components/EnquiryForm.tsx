@@ -24,7 +24,7 @@ const FIELDS: FieldDef[] = [
     name: "entry.546361128",
     label: "Which services are you interested in?",
     required: true,
-    options: ["Logo Design", "Mini Brand", "Brand Identity", "Brand Identity Maximum"],
+    options: ["Mini Brand", "Brand Identity", "Brand Identity Maximum"],
   },
   {
     kind: "textarea",

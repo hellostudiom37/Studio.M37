@@ -31,62 +31,43 @@ const PHASES = [
   },
 ];
 
+const FILES = [
+  "Print (AI, PDF)",
+  "Web (PNG, JPEG, SVG)",
+  "Brand colours + black & white variations",
+];
+
 const SERVICES: Service[] = [
-  {
-    name: "Logo Design",
-    audience:
-      "Just starting out and need one strong, versatile mark to launch with? This is the low-lift way in.",
-    timeline: "7–15 days",
-    price: "500 EUR",
-    included: [
-      "Niche, audience & competitor analysis",
-      "Creative direction, moodboard",
-      "2 logo concepts to choose from",
-      "Primary logo",
-      "Secondary logo",
-      "Brand mark",
-      "Brand colour palette + typography suite",
-      "2 rounds of revisions",
-    ],
-    deliverables: ["Logo book (usage guidelines)", "Logo visualisation / mockups"],
-    files: [
-      "Print (AI, EPS, PDF)",
-      "Web (PNG, JPEG, SVG)",
-      "Brand colours + black & white variations",
-      "Presentation with logo visualisation",
-    ],
-  },
   {
     name: "Mini Brand",
     audience:
-      "Ready to look consistent across a few more touchpoints, without committing to a full system yet.",
-    timeline: "15 days",
-    price: "700 EUR",
+      "For founders who are just starting out and need one strong, complete base to launch with.",
+    timeline: "10–15 work days",
+    price: "590 EUR",
     included: [
       "Niche, audience & competitor analysis",
       "Creative direction, moodboard",
       "2 logo concepts to choose from",
       "Primary logo",
       "Secondary logo",
-      "3 brand marks",
+      "2 brand marks",
       "1 brand pattern",
       "Brand colour palette + typography suite",
       "2 rounds of revisions",
     ],
-    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
-    files: [
-      "Print (AI, EPS, PDF)",
-      "Web (PNG, JPEG, SVG)",
-      "Brand colours + black & white variations",
-      "Presentation with logo visualisation",
+    deliverables: [
+      "Mini brand book (usage guidelines)",
+      "Logo visualisation / mockups",
+      "Brand presentation",
     ],
+    files: FILES,
   },
   {
     name: "Brand Identity",
     audience:
-      "Growing, and need a fuller toolkit — social, print, the works — to match where the business is headed.",
-    timeline: "15–20 days",
-    price: "900 EUR",
+      "For growing businesses that need their brand to work everywhere, from Instagram to print.",
+    timeline: "15–20 work days",
+    price: "850 EUR",
     included: [
       "Niche, audience & competitor analysis",
       "Creative direction, moodboard",
@@ -100,20 +81,19 @@ const SERVICES: Service[] = [
       "Social media avatar + 5 highlight covers",
       "2 rounds of revisions",
     ],
-    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
-    files: [
-      "Print (AI, EPS, PDF)",
-      "Web (PNG, JPEG, SVG)",
-      "Brand colours + black & white variations",
+    deliverables: [
+      "Brand book (usage guidelines)",
+      "Logo visualisation / mockups",
       "Brand identity presentation",
     ],
+    files: FILES,
   },
   {
     name: "Brand Identity Maximum",
     audience:
-      "Established, and investing in one complete, built-to-scale brand system for the long haul.",
-    timeline: "25–30 days",
-    price: "1400 EUR",
+      "For businesses ready to invest in one complete brand system, built to grow.",
+    timeline: "25–30 work days",
+    price: "1300 EUR",
     included: [
       "Niche, audience & competitor analysis",
       "Creative direction, moodboard",
@@ -128,14 +108,19 @@ const SERVICES: Service[] = [
       "Social media avatar + 5 highlight covers",
       "3 rounds of revisions",
     ],
-    deliverables: ["Brand book (usage guidelines)", "Logo visualisation / mockups"],
-    files: [
-      "Print (AI, EPS, PDF)",
-      "Web (PNG, JPEG, SVG)",
-      "Brand colours + black & white variations",
+    deliverables: [
+      "Brand book (usage guidelines)",
+      "Logo visualisation / mockups",
       "Brand identity presentation",
     ],
+    files: FILES,
   },
+];
+
+const GOOD_TO_KNOW = [
+  "50% to book your spot, 50% before the final files",
+  "The timeline starts once I receive your filled-in brief",
+  "These are launch prices for my first clients and may change in 2027",
 ];
 
 export default function StudioPage() {
@@ -231,6 +216,11 @@ export default function StudioPage() {
               Ways to work together.
             </h2>
           </Reveal>
+          <Reveal delay={0.15}>
+            <p className="font-light-brand mt-4 text-black/60">
+              Studio launch prices for my first clients.
+            </p>
+          </Reveal>
 
           <div className="mt-16 divide-y divide-black/10 border-t border-b border-black/10">
             {SERVICES.map((service, i) => (
@@ -239,6 +229,19 @@ export default function StudioPage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal>
+            <div className="mt-12 max-w-lg">
+              <p className="font-semibold-brand text-xs uppercase tracking-[0.1em] text-black/40">
+                Good to know
+              </p>
+              <ul className="font-light-brand mt-3 space-y-1.5 text-sm text-black/70">
+                {GOOD_TO_KNOW.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
