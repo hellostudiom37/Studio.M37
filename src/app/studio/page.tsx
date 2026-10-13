@@ -12,12 +12,12 @@ const PHASES = [
   {
     n: "01",
     label: "Discovery",
-    body: "We start by understanding the business, not the brief — audience, competitors, positioning, and what actually needs to be true for this brand to work.",
+    body: "I start by understanding the business, not the brief — audience, competitors, positioning, and what actually needs to be true for this brand to work.",
   },
   {
     n: "02",
     label: "Define",
-    body: "Findings become creative direction. Every decision from here is one we can explain, not one we picked because it looked nice.",
+    body: "Findings become creative direction. Every decision from here is one I can explain, not one made just because it looked nice.",
   },
   {
     n: "03",
@@ -177,7 +177,7 @@ export default function StudioPage() {
         <div className="container-page">
           <Reveal>
             <span className="font-light-brand text-sm uppercase tracking-[0.25em] text-blue">
-              Our Approach
+              The Approach
             </span>
           </Reveal>
           <Reveal delay={0.1}>

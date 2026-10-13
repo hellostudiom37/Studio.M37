@@ -25,8 +25,8 @@ export default function EnquiryPage() {
 
         <Reveal delay={0.15} className="mt-6 max-w-lg">
           <p className="font-light-brand text-black/70">
-            Tell us a little about your project below. We reply to every enquiry within 2–3
-            working days — if it&apos;s a fit, we&apos;ll set up a short discovery call.
+            Tell me a little about your project below. Every enquiry is answered within 24
+            hours — if it&apos;s a fit, I&apos;ll set up a short discovery call.
           </p>
         </Reveal>
       </div>

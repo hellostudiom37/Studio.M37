@@ -30,7 +30,7 @@ const FIELDS: FieldDef[] = [
     kind: "textarea",
     name: "entry.300867732",
     label: "Briefly describe your project",
-    helper: "What's the general brief & vision, what're you hoping we achieve?",
+    helper: "What's the general brief & vision, and what are you hoping to achieve?",
     required: true,
     rows: 4,
   },
@@ -132,7 +132,7 @@ export default function EnquiryForm() {
       >
         <span className="font-display text-3xl italic text-black">Thank you.</span>
         <p className="font-light-brand max-w-md text-black/70">
-          Your enquiry is in. We reply to every one within 2–3 working days — talk soon.
+          Your enquiry is in. Every one is answered within 24 hours — talk soon.
         </p>
       </motion.div>
     );
@@ -238,7 +238,7 @@ export default function EnquiryForm() {
 
       {status === "error" && (
         <p className="font-light-brand text-sm text-red-600">
-          Something went wrong sending that — please try again, or email us directly at{" "}
+          Something went wrong sending that — please try again, or email me directly at{" "}
           <a href="mailto:hellostudio.m37@gmail.com" className="underline">
             hellostudio.m37@gmail.com
           </a>
